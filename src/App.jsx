@@ -1,92 +1,153 @@
 import { Header } from "./components/Header";
-
 import CoreSection from "./components/CoreSection";
-import ExpertiseCard from "./components/ExpertiseCard";
-import ProjectRow from "./components/ProjectRow";
+import PhotoSlideshow from "./components/PhotoSlideshow";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const expertise = [
-    {
-      title: "Parcel Ground Surveys",
-      icon: <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />,
-    },
-    { title: "Tunnel Geology", icon: <path d="M2 12h20M2 12l5-5m0 10-5-5" /> },
-    {
-      title: "Highway / Railway",
-      icon: <path d="M16 2v4M8 2v4M3 10h18M5 14h14M7 18h10" />,
-    },
-    {
-      title: "Dam & Reservoir",
-      icon: <path d="M12 2.7l5.7 5.9-5.7 5.9-5.7-5.9zM2 22h20" />,
-    },
-    { title: "Hydrogeology", icon: <circle cx="12" cy="12" r="10" /> },
-    { title: "Zoning Reports", icon: <path d="M3 3h18v18H3zM9 9h6v6H9z" /> },
-    { title: "Drilling Works", icon: <path d="M12 5v14M5 12h14" /> },
-    {
-      title: "Geophysical Studies",
-      icon: <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />,
-    },
-  ];
-
-  const projects = [
-    {
-      label: "01. Exploration",
-      title: "Field Geology Studies",
-      desc: "Comprehensive surface analysis and rock mass characterization.",
-    },
-    {
-      label: "02. Extraction",
-      title: "Drilling and Field Experiments",
-      desc: "Precision core sampling and in-situ testing.",
-    },
-    {
-      label: "03. Analysis",
-      title: "Geophysical Studies",
-      desc: "ERT and seismic refraction for subsurface imaging.",
-    },
-    {
-      label: "04. Synthesis",
-      title: "Geotechnical Design",
-      desc: "Foundation and slope stability calculations.",
-    },
-  ];
-
   return (
     <div className="bg-[#ece9e3] text-[#2d2d2d]">
       <Header />
 
-      <main className="pt-32">
-        {/* CORE SECTION (yeni eklenen) */}
-        <CoreSection />
+      <main className="pt-20 md:pt-24">
+        {/* ANA SAYFA */}
+        <section id="home">
+          <CoreSection />
+          <PhotoSlideshow />
+        </section>
 
-        {/* EXPERTISE */}
-        <section id="expertise" className="mx-auto max-w-6xl py-24">
-          <div className="mb-8 flex items-end justify-between border-b border-[#4a9e8e] pb-4">
-            <h2 className="text-4xl font-bold tracking-tight">
-              Technical Expertise
-            </h2>
+        {/* HAKKIMIZDA */}
+        <section id="hakkimizda" className="mx-auto max-w-4xl px-4 py-12 md:px-8 md:py-20">
+          <div className="mb-8 border-b border-[#4a9e8e] pb-4">
+            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Hakkımızda</h2>
           </div>
 
-          <div className="grid grid-cols-4 gap-4 max-[1000px]:grid-cols-2">
-            {expertise.map((item, i) => (
-              <ExpertiseCard key={i} title={item.title} icon={item.icon} />
-            ))}
+          <p className="mb-12 leading-relaxed text-[#3a3a3a]">
+            <strong>Anıl Kutluay Mühendislik</strong>, "Tutarlı Mühendislik
+            Hizmetleri" yaklaşımı ile Jeoloji, Jeofizik ve Geoteknik
+            mühendisliği alanında uzmanlaşmış, bilimsel temelli ve mühendislik
+            prensiplerine bağlı hizmet anlayışıyla altyapı, ulaştırma, su tutma
+            yapıları, maden, enerji alanlarında etüt, proje ve danışmanlık
+            hizmeti vermektedir.
+          </p>
+
+          <h3 className="mb-6 text-lg font-bold text-[#4a9e8e] md:mb-8 md:text-xl">
+            Çalışma Alanları
+          </h3>
+
+          <div className="space-y-10">
+            <div className="border-t border-[#cfcac2] pt-6">
+              <h4 className="mb-3 font-bold">
+                Jeolojik-Jeoteknik Etüt ve Geoteknik Projelendirme
+              </h4>
+              <p className="leading-relaxed text-[#3a3a3a]">
+                Jeolojik-Jeoteknik Etüt ve Geoteknik Projelendirme
+                hizmetlerimiz, yapıların güvenli ve ekonomik tasarımı için
+                zemin ve kaya ortamının mühendislik özelliklerinin
+                belirlenmesini kapsar. Zemin etüdü, sondaj, saha deneyleri,
+                laboratuvar testleri ve jeofizik çalışmalar ile proje alanının
+                jeoteknik modeli oluşturulur. Elde edilen veriler doğrultusunda
+                taşıma gücü hesapları, oturma analizleri, şev stabilite
+                değerlendirmeleri, temel tasarımı, kazıklı temel, iksa ve zemin
+                iyileştirme projeleri yönetmeliklere uygun şekilde hazırlanır.
+              </p>
+            </div>
+
+            <div className="border-t border-[#cfcac2] pt-6">
+              <h4 className="mb-3 font-bold">Saha Jeolojisi Çalışmaları</h4>
+              <p className="leading-relaxed text-[#3a3a3a]">
+                <strong>Saha jeolojisi çalışmaları</strong>, jeolojik-jeoteknik
+                etüt ve zemin etüdü süreçlerinin temelini oluşturan arazi
+                incelemeleridir. Proje alanında gerçekleştirilen jeolojik
+                haritalama, litolojik birimlerin tanımlanması, süreksizlik
+                ölçümleri, fay ve kırık sistemlerinin belirlenmesi ile yeraltı
+                su gözlemleri sayesinde zeminin ve kaya ortamının mühendislik
+                özellikleri detaylı olarak ortaya konur.
+              </p>
+            </div>
+
+            <div className="border-t border-[#cfcac2] pt-6">
+              <h4 className="mb-3 font-bold">Sondaj ve Saha Deneyleri</h4>
+              <p className="leading-relaxed text-[#3a3a3a]">
+                Sondaj ve saha deneyleri,{" "}
+                <strong>zemin etüdü ve geoteknik proje çalışmalarının</strong>{" "}
+                temelini oluşturan en kritik mühendislik uygulamalarıdır.
+              </p>
+              <p className="mt-3 leading-relaxed text-[#3a3a3a]">
+                Firmamız tarafından gerçekleştirilen{" "}
+                <strong>zemin ve kaya sondaj çalışmaları</strong>, ulusal ve
+                uluslararası standartlara uygun ekipman ve yöntemlerle
+                yürütülmektedir. Sondaj sırasında{" "}
+                <strong>minimum örselenme (disturbance)</strong> prensibi esas
+                alınarak; numune kalitesinin korunması, doğal zemin yapısının
+                bozulmaması ve laboratuvar deney sonuçlarının güvenilirliğinin
+                artırılması hedeflenir.
+              </p>
+            </div>
+
+            <div className="border-t border-[#cfcac2] pt-6">
+              <h4 className="mb-3 font-bold">Jeofizik Çalışmalar</h4>
+              <p className="leading-relaxed text-[#3a3a3a]">
+                Jeofizik çalışmalar,{" "}
+                <strong>zemin etüdü ve geoteknik projeler</strong> kapsamında
+                yeraltı yapısının fiziksel ve dinamik özelliklerinin
+                belirlenmesine yönelik mühendislik uygulamalarıdır. Bu
+                çalışmalar sayesinde zeminin tabakalaşma yapısı, mühendislik
+                parametreleri, yeraltı su seviyesi, kaya kalitesi ve deprem
+                davranışı detaylı olarak analiz edilir.
+              </p>
+              <p className="mt-3 leading-relaxed text-[#3a3a3a]">
+                Firmamız tarafından gerçekleştirilen{" "}
+                <strong>jeofizik etüt çalışmaları</strong> kapsamında;{" "}
+                <strong>
+                  MASW (Multi Channel Analysis of Surface Waves), Sismik
+                  Kırılma, Sismik Yansıma, Mikrotremor (HVSR), Elektrik
+                  Özdirenç Tomografisi (ERT)
+                </strong>{" "}
+                ve benzeri yöntemler uygulanmaktadır.
+              </p>
+              <p className="mt-3 leading-relaxed text-[#3a3a3a]">
+                Geniş alanları hızlı ve ekonomik şekilde temsil edebilmesi
+                sayesinde jeofizik çalışmalar, saha jeolojisi çalışmalarını
+                tamamlayıcı nitelikte önemli bir analiz yöntemidir.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* PROJECTS */}
-        <section id="projects" className="mx-auto max-w-6xl pb-32">
-          <div className="mb-8 flex items-end justify-between border-b border-[#4a9e8e] pb-4">
-            <h2 className="text-4xl font-bold tracking-tight">
-              Operations Detail
-            </h2>
-          </div>
-
-          <div>
-            {projects.map((p, i) => (
-              <ProjectRow key={i} {...p} index={i} />
-            ))}
+        {/* ILETISIM */}
+        <section
+          id="iletisim"
+          className="border-t border-[#cfcac2] bg-[#e5e1da] px-4 py-12 md:px-8 md:py-20"
+        >
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-8 border-b border-[#4a9e8e] pb-4">
+              <h2 className="text-2xl font-bold tracking-tight md:text-3xl">İletişim</h2>
+            </div>
+            <div className="space-y-3 text-[#3a3a3a]">
+              <p>
+                <span className="font-bold">Tel:</span> +90 539 722 82 58
+              </p>
+              <p>
+                <span className="font-bold">E-posta:</span>{" "}
+                <a
+                  href="mailto:info@akmgeo.com.tr"
+                  className="text-[#4a9e8e] hover:underline"
+                >
+                  info@akmgeo.com.tr
+                </a>
+                {" / "}
+                <a
+                  href="mailto:anil@akmgeo.com.tr"
+                  className="text-[#4a9e8e] hover:underline"
+                >
+                  anil@akmgeo.com.tr
+                </a>
+              </p>
+              <p>
+                <span className="font-bold">Adres:</span> Cumhuriyet mah.
+                Nazım Hikmet Bulvarı No:1 136 Esenyurt İstanbul
+              </p>
+            </div>
           </div>
         </section>
       </main>
